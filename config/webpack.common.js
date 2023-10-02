@@ -6,9 +6,5 @@ module.exports = {
     app: paths.src + "/index.js",
   },
 
-  output: {
-    filename: "[name].[contenthash].bundle.js",
-    path: paths.build,
-    clean: true,
-  },
+  
 };

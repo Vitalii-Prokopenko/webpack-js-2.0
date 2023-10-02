@@ -9,3 +9,5 @@ mkdir config
 paths.js
 webpack.common.js
 script build
+webpack.dev.js
+webpack.prod.js
