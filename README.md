@@ -11,3 +11,5 @@ webpack.common.js
 script build
 webpack.dev.js
 webpack.prod.js
+npm install --save-dev html-webpack-plugin
+npm i -D webpack-dev-server
