@@ -14,12 +14,9 @@ module.exports = {
   plugins: [
     // Generates an HTML file from a template
     new HtmlWebpackPlugin({
-      // The title to use for the generated HTML document
-      title: "Webpack-js",
-      // Webpack relative or absolute path to the template
-      template: paths.src + "/template.html",
-      // The file to write the HTML to
-      filename: "index.html",
+      title: "Webpack-js", // The title to use for the generated HTML document
+      template: paths.src + "/template.html", // Webpack relative or absolute path to the template
+      filename: "index.html", // The file to write the HTML to
     }),
     new CleanWebpackPlugin(),
   ],
@@ -27,8 +24,8 @@ module.exports = {
   module: {
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
-      {        
-        test: /\.(?:js|mjs|cjs)$/,        
+      {
+        test: /\.(?:js|mjs|cjs)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
