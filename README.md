@@ -13,3 +13,5 @@ webpack.dev.js
 webpack.prod.js
 npm install --save-dev html-webpack-plugin
 npm i -D webpack-dev-server
+npm install --save-dev clean-webpack-plugin
+babel-loader

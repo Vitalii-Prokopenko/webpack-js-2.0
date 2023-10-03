@@ -3,6 +3,7 @@ const paths = require("./paths");
 
 // Import plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -20,5 +21,22 @@ module.exports = {
       // The file to write the HTML to
       filename: "index.html",
     }),
+    new CleanWebpackPlugin(),
   ],
+  // Rules
+  module: {
+    rules: [
+      // JavaScript: Use Babel to transpile JavaScript files
+      {        
+        test: /\.(?:js|mjs|cjs)$/,        
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [["@babel/preset-env", { targets: "defaults" }]],
+          },
+        },
+      },
+    ],
+  },
 };
