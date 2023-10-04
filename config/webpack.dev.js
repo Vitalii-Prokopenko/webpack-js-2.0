@@ -26,4 +26,26 @@ module.exports = merge(common, {
     hot: true, // Enables webpack's Hot Module Replacement feature
     port: 7070, // Specifies a port number to listen for requests on
   },
+  module: {
+    rules: [
+      // Styles: Inject CSS into the head with source maps
+      {
+        test: /\.(sass|scss|css)$/,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          {
+            loader: "css-loader",
+            // options: { sourceMap: true, importLoaders: 1, modules: false },
+          },          
+          // Compiles Sass to CSS
+          { 
+            loader: "sass-loader",
+          //  options: { sourceMap: true } 
+          },
+        ],
+      },
+    ]
+  }
 });

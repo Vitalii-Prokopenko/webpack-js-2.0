@@ -1,3 +1,5 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 // Import of paths
 const paths = require('./paths');
 
@@ -20,4 +22,26 @@ module.exports = merge(common, {
       },
       // Controls how source maps are generated
   devtool: false,
+  module: {
+    rules: [
+      {
+        test: /\.(sass|scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            // options: {
+            //   importLoaders: 2,
+            //   sourceMap: false,
+            //   modules: false,
+            // },
+          },          
+          'sass-loader',
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin()
+  ]
 })

@@ -1,4 +1,5 @@
 import wallpaperImage from './images/wallpaper.jpg';
+import './scss/main.scss';
 
 console.log('Hello world!');
 console.log('Hello everybody!');
