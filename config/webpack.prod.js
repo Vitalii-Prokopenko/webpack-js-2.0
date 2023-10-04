@@ -16,6 +16,7 @@ module.exports = merge(common, {
         filename: "[name].[contenthash].bundle.js",
         path: paths.build,
         clean: true,
+        assetModuleFilename: "assets/[name].[contenthash][ext][query]"
       },
       // Controls how source maps are generated
   devtool: false,

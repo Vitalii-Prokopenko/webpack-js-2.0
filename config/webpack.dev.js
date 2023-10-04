@@ -15,6 +15,7 @@ module.exports = merge(common, {
     filename: "[name].bundle.js",
     path: paths.build,
     clean: true,
+    assetModuleFilename: 'assets/[name][ext][query]'
   },
   // Control how source maps are generated
   devtool: "eval-source-map",
