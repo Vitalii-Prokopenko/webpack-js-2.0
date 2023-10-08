@@ -12,6 +12,21 @@ module.exports = {
     app: paths.src + "/index.js",
   },
 
+  resolve: {
+    // Default extensions: no need to mention them
+    extensions: ['.js', '.jsx', '.json'],
+    // Replace relative paths to files
+    alias: {
+      '@components': paths.src + '/components',
+      '@data': paths.src + '/data',
+      '@fonts': paths.src + '/fonts',
+      '@images': paths.src + '/images',
+      '@js': paths.src + '/js',
+      '@scss': paths.src + '/scss',
+      '@': paths.src,
+    }
+  },
+
   // Common plugins
   plugins: [
     // Generates an HTML file from a template
