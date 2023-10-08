@@ -15,7 +15,7 @@ module.exports = merge(common, {
     filename: "[name].bundle.js",
     path: paths.build,
     clean: true,
-    assetModuleFilename: 'assets/[name][ext][query]'
+    assetModuleFilename: "assets/[name][ext][query]",
   },
   // Control how source maps are generated
   devtool: "eval-source-map",
@@ -32,20 +32,17 @@ module.exports = merge(common, {
       {
         test: /\.(sass|scss|css)$/,
         use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
+          "style-loader", // Creates `style` nodes from JS strings
           {
-            loader: "css-loader",
+            loader: "css-loader", // Translates CSS into CommonJS
             // options: { sourceMap: true, importLoaders: 1, modules: false },
-          },          
-          // Compiles Sass to CSS
-          { 
-            loader: "sass-loader",
-          //  options: { sourceMap: true } 
+          },
+          {
+            loader: "sass-loader", // Compiles Sass to CSS
+            //  options: { sourceMap: true }
           },
         ],
       },
-    ]
-  }
+    ],
+  },
 });
