@@ -5,6 +5,8 @@ const paths = require("./paths");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
+const Papaparse = require("papaparse");
+
 module.exports = {
   entry: {
     app: paths.src + "/index.js",
@@ -39,11 +41,23 @@ module.exports = {
 
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: "asset/inline" },
+      // XML data
+      { test: /\.xml$/, use: ["xml-loader"] },
+      // CSV data
+      {
+        test: /\.csv$/,
+        loader: "csv-loader",
+        options: {
+          dynamicTyping: true,
+          header: true,
+          skipEmptyLines: true,
+        },
+      },
     ],
   },
   optimization: {
     splitChunks: {
-      chunks: "all"
-    }
-  }
+      chunks: "all",
+    },
+  },
 };

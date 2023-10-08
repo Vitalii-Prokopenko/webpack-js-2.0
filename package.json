@@ -35,6 +35,8 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "csv-loader": "^3.0.5",
+    "normalize.css": "^8.0.1",
+    "xml-loader": "^1.2.1"
   }
 }

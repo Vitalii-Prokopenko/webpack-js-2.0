@@ -1,8 +1,12 @@
 import wallpaperImage from './images/wallpaper.jpg';
 import './scss/main.scss';
+import dataXml from "./data/data.xml";
+import dataCsv from "./data/data.csv";
 
 console.log('Hello world!');
 console.log('Hello everybody!');
+console.log(dataXml);
+console.log(dataCsv);
 
 
 // Create heading node
