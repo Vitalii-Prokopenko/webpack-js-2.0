@@ -1,11 +1,11 @@
 @import "~normalize.css";
 
 @font-face {
-    font-family: 'Inter';
-    src: url('../fonts/inter.ttf');
+    font-family: 'Roboto-Regular';
+    src: url('@fonts/roboto-regular.ttf');
   }
 
-  $font-family-js: 'Inter', sans-serif;
+  $font-family-js: 'Roboto-Regular', sans-serif;
 
 body {
     font-family: $font-family-js;
