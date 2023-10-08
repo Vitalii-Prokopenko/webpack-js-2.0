@@ -5,8 +5,6 @@ const paths = require("./paths");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const Papaparse = require("papaparse");
-
 module.exports = {
   entry: {
     app: paths.src + "/index.js",
