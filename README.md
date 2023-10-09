@@ -20,3 +20,6 @@ css-loader, node-sass, sass-loader, style-loader
 MiniCssExtractPlugin
 Minification: css-minimizer-webpack-plugin, terser-webpack-plugin
 normalize.css
+csv-loader and xml-loader
+default extensions and aliases
+copy-webpack-plugin

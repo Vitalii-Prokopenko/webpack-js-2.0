@@ -4,6 +4,7 @@ const paths = require("./paths");
 // Import plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -21,7 +22,7 @@ module.exports = {
       '@images': paths.src + '/images',
       '@js': paths.src + '/js',
       '@scss': paths.src + '/scss',
-      '@': paths.src,
+      '@': paths.src      
     }
   },
 
@@ -34,6 +35,13 @@ module.exports = {
       filename: "index.html", // The file to write the HTML to
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: paths.src + '/images', to: paths.build + '/static/images'},
+        {from: paths.src + '/data', to: paths.build + '/static/data'},
+        {from: paths.src + '/fonts', to: paths.build + '/static/fonts'},
+      ]
+    })
   ],
   // Rules
   module: {
