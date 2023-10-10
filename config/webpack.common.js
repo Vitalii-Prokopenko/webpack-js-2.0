@@ -5,6 +5,7 @@ const paths = require("./paths");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -41,7 +42,8 @@ module.exports = {
         {from: paths.src + '/data', to: paths.build + '/static/data'},
         {from: paths.src + '/fonts', to: paths.build + '/static/fonts'},
       ]
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   // Rules
   module: {
