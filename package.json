@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "csv-loader": "^3.0.5",
+    "handlebars-loader": "^1.7.3",
     "normalize.css": "^8.0.1",
     "xml-loader": "^1.2.1"
   }
