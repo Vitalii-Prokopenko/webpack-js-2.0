@@ -10,7 +10,6 @@ const common = require("./webpack.common");
 
 // Import of webpack merge utility
 const { merge } = require("webpack-merge");
-const { NoEmitOnErrorsPlugin } = require("webpack");
 
 module.exports = merge(common, {
   // Set the mode to production
