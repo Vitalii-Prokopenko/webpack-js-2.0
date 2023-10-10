@@ -23,3 +23,4 @@ normalize.css
 csv-loader and xml-loader
 default extensions and aliases
 copy-webpack-plugin
+cross-env
