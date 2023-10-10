@@ -25,3 +25,5 @@ default extensions and aliases
 copy-webpack-plugin
 cross-env
 webpack-bundle-analyzer
+.prettierrc
+npm i handlebars-loader --save

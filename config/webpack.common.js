@@ -76,6 +76,8 @@ module.exports = {
           skipEmptyLines: true,
         },
       },
+      // Handlebars templates
+      { test: /\.handlebars$/, loader: "handlebars-loader" }
     ],
   },
   optimization: {
