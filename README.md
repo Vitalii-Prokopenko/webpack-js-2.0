@@ -27,3 +27,6 @@ cross-env
 webpack-bundle-analyzer
 .prettierrc
 npm i handlebars-loader --save
+npm install --save-dev eslint
+npm install --save-dev eslint-webpack-plugin
+npx install-peerdeps --dev eslint-config-airbnb

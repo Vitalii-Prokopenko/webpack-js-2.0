@@ -1,31 +1,29 @@
-// Import of paths to files
-const paths = require('./paths');
-
 // Import plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const isDev = process.env.NODE_ENV === 'development';
-const isProd = !isDev;
+// Import of paths to files
+const paths = require('./paths');
+
+// const isDev = process.env.NODE_ENV === 'development';
+// const isProd = !isDev;
 
 module.exports = {
   entry: {
-    app: paths.src + '/index.js',
+    app: `${paths.src}/index.js`,
   },
 
   resolve: {
     extensions: ['.js', '.jsx', '.json'], // Default extensions: no need to mention them
     alias: {
       // Replace relative paths to files
-      '@components': paths.src + '/components',
-      '@data': paths.src + '/data',
-      '@fonts': paths.src + '/fonts',
-      '@images': paths.src + '/images',
-      '@js': paths.src + '/js',
-      '@scss': paths.src + '/scss',
+      '@data': `${paths.public}/data`,
+      '@fonts': `${paths.public}/fonts`,
+      '@images': `${paths.public}/images`,
+      '@components': `${paths.src}/components`,
+      '@js': `${paths.src}/js`,
+      '@scss': `${paths.src}/scss`,
       '@': paths.src,
     },
   },
@@ -35,18 +33,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       // Generates an HTML file from a template
       title: 'Webpack-js', // The title to use for the generated HTML document
-      template: paths.src + '/template.html', // Webpack relative or absolute path to the template
+      template: `${paths.src}/template.html`, // Webpack relative or absolute path to the template
       filename: 'index.html', // The file to write the HTML to
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        { from: paths.public + '/images', to: paths.static + '/images' },
-        { from: paths.public + '/data', to: paths.static + '/data' },
-        { from: paths.public + '/fonts', to: paths.static + '/fonts' },
+        { from: `${paths.public}/images`, to: `${paths.static}/images` },
+        { from: `${paths.public}/data`, to: `${paths.static}/data` },
+        { from: `${paths.public}/fonts`, to: `${paths.static}/fonts` },
       ],
     }),
-    new BundleAnalyzerPlugin(),
   ],
   // Rules
   module: {

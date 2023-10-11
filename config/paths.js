@@ -1,16 +1,16 @@
 // Paths to files
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   // Where webpack should find source files to build bundle
-  src: path.resolve(__dirname, "../src"),
+  src: path.resolve(__dirname, '../src'),
 
   // Where webpack should emit bundle
-  build: path.resolve(__dirname, "../dist"),
+  build: path.resolve(__dirname, '../dist'),
 
   // Where webpack should get static files copied to build folder
-  public: path.resolve(__dirname, "../public"),
+  public: path.resolve(__dirname, '../public'),
 
   // Where webpack should put static files copied from public folder
-  static: path.resolve(__dirname, "../dist/static"),
+  static: path.resolve(__dirname, '../dist/static'),
 };
