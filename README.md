@@ -1,6 +1,6 @@
 # Webpack 5 Boilerplate
 
-Webpack 5 boilerplate using Babel, Sass and Handlebars, processing xml, csv downloads.
+Webpack 5 boilerplate using Babel, Sass and Handlebars and processing xml, csv downloads.
 
 ## Installation
 
