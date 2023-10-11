@@ -6,12 +6,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 // Import of paths to files
 const paths = require('./paths');
 
-// const isDev = process.env.NODE_ENV === 'development';
-// const isProd = !isDev;
-
 module.exports = {
   entry: {
-    app: `${paths.src}/index.js`,
+    app: `${paths.src}/index.js`, // Entry point of app
   },
 
   resolve: {
@@ -30,13 +27,15 @@ module.exports = {
 
   // Common plugins
   plugins: [
+    // Generates an HTML file from a template
     new HtmlWebpackPlugin({
-      // Generates an HTML file from a template
       title: 'Webpack-js', // The title to use for the generated HTML document
       template: `${paths.src}/template.html`, // Webpack relative or absolute path to the template
       filename: 'index.html', // The file to write the HTML to
     }),
+    // Cleans the dist folder before new run
     new CleanWebpackPlugin(),
+    // Copies static files to the dist folder
     new CopyWebpackPlugin({
       patterns: [
         { from: `${paths.public}/images`, to: `${paths.static}/images` },
@@ -45,8 +44,9 @@ module.exports = {
       ],
     }),
   ],
-  // Rules
+
   module: {
+  // Rules
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
       {
@@ -61,7 +61,6 @@ module.exports = {
       },
       // Images: Copy image files to build folder
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
-
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
       // XML data
@@ -80,6 +79,7 @@ module.exports = {
       { test: /\.handlebars$/, loader: 'handlebars-loader' },
     ],
   },
+  // Optimizes js code of installed libraries
   optimization: {
     splitChunks: {
       chunks: 'all',

@@ -29,9 +29,7 @@ module.exports = merge(common, {
     hot: true, // Enables webpack's Hot Module Replacement feature
     port: 7070, // Specifies a port number to listen for requests on
   },
-  plugins: [
-    new ESLintPlugin(),
-  ],
+  plugins: [new ESLintPlugin()],
   module: {
     rules: [
       // Styles: Inject CSS into the head with source maps
