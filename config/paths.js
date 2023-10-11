@@ -10,4 +10,7 @@ module.exports = {
 
   // Where webpack should get static files copied to build folder
   public: path.resolve(__dirname, "../public"),
+
+  // Where webpack should put static files copied from public folder
+  static: path.resolve(__dirname, "../dist/static"),
 };

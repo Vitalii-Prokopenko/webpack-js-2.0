@@ -1,49 +1,52 @@
 // Import of paths to files
-const paths = require("./paths");
+const paths = require('./paths');
 
 // Import plugins
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
 
 module.exports = {
   entry: {
-    app: paths.src + "/index.js",
+    app: paths.src + '/index.js',
   },
 
   resolve: {
-    // Default extensions: no need to mention them
-    extensions: ['.js', '.jsx', '.json'],
-    // Replace relative paths to files
+    extensions: ['.js', '.jsx', '.json'], // Default extensions: no need to mention them
     alias: {
+      // Replace relative paths to files
       '@components': paths.src + '/components',
       '@data': paths.src + '/data',
       '@fonts': paths.src + '/fonts',
       '@images': paths.src + '/images',
       '@js': paths.src + '/js',
       '@scss': paths.src + '/scss',
-      '@': paths.src      
-    }
+      '@': paths.src,
+    },
   },
 
   // Common plugins
   plugins: [
-    // Generates an HTML file from a template
     new HtmlWebpackPlugin({
-      title: "Webpack-js", // The title to use for the generated HTML document
-      template: paths.src + "/template.html", // Webpack relative or absolute path to the template
-      filename: "index.html", // The file to write the HTML to
+      // Generates an HTML file from a template
+      title: 'Webpack-js', // The title to use for the generated HTML document
+      template: paths.src + '/template.html', // Webpack relative or absolute path to the template
+      filename: 'index.html', // The file to write the HTML to
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        {from: paths.src + '/images', to: paths.build + '/static/images'},
-        {from: paths.src + '/data', to: paths.build + '/static/data'},
-        {from: paths.src + '/fonts', to: paths.build + '/static/fonts'},
-      ]
+        { from: paths.public + '/images', to: paths.static + '/images' },
+        { from: paths.public + '/data', to: paths.static + '/data' },
+        { from: paths.public + '/fonts', to: paths.static + '/fonts' },
+      ],
     }),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
   ],
   // Rules
   module: {
@@ -53,23 +56,23 @@ module.exports = {
         test: /\.(?:js|mjs|cjs)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: [["@babel/preset-env", { targets: "defaults" }]],
+            presets: [['@babel/preset-env', { targets: 'defaults' }]],
           },
         },
       },
       // Images: Copy image files to build folder
-      { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: "asset/resource" },
+      { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
 
       // Fonts and SVGs: Inline files
-      { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: "asset/inline" },
+      { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
       // XML data
-      { test: /\.xml$/, use: ["xml-loader"] },
+      { test: /\.xml$/, use: ['xml-loader'] },
       // CSV data
       {
         test: /\.csv$/,
-        loader: "csv-loader",
+        loader: 'csv-loader',
         options: {
           dynamicTyping: true,
           header: true,
@@ -77,12 +80,12 @@ module.exports = {
         },
       },
       // Handlebars templates
-      { test: /\.handlebars$/, loader: "handlebars-loader" }
+      { test: /\.handlebars$/, loader: 'handlebars-loader' },
     ],
   },
   optimization: {
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
     },
   },
 };
