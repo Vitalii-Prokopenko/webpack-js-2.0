@@ -2,9 +2,10 @@
   "name": "webpack-js",
   "version": "1.0.0",
   "description": "test webpack boilerplate for js-based projects",
+  "homepage": "https://Vitalii-Prokopenko.github.io/webpack-js/",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js --public-url /webpack-js/",
     "dev": "cross-env NODE_ENV=development webpack --config config/webpack.dev.js",
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js"
   },
