@@ -1,13 +1,31 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
 @font-face {
-    font-family: 'Roboto-Regular';
-    src: url('@fonts/roboto-regular.ttf');
-  }
+  font-family: 'Roboto-Regular';
+  src: url('@fonts/roboto-regular.ttf');
+}
 
-  $font-family-js: 'Roboto-Regular', sans-serif;
+$font-family-js: 'Roboto-Regular', sans-serif;
 
 body {
-    font-family: $font-family-js;
-    background-color: crimson;    
+  padding-top: 20px;
+  font-family: $font-family-js;
+  background-color: #fff;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 300px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 50px;
 }
