@@ -2,36 +2,6 @@
 
 Webpack 5 boilerplate using Babel, Sass and Handlebars and processing xml, csv downloads.
 
-## Usage
-
-1. Clone this repo
-```bash
-git clone https://github.com/Vitalii-Prokopenko/webpack-js {your project name}
-```
-2. 
-
-Clone this repo and npm install.
-
-```bash
-npm i
-```
-
-## Usage
-
-### Development server
-
-```bash
-npm start
-```
-
-You can view the development server at `localhost:7070`.
-
-### Production build
-
-```bash
-npm run build
-```
-
 ## Features
 
 - [Webpack](https://webpack.js.org/)
@@ -82,6 +52,79 @@ npm run build
 - [`eslint-config-airbnb`](https://www.npmjs.com/package/eslint-config-airbnb) - Provide Airbnb's .eslintrc as an extensible shared config
 - [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import) - support linting of ES2015+ (ES6+) import/export syntax
 - [`eslint-import-resolver-webpack`](https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers/webpack) - Throw exceptions for import/export in webpack
+
+## Usage
+
+1. Clone this repo to your computer
+
+```bash
+git clone https://github.com/Vitalii-Prokopenko/webpack-js your-project-name
+```
+
+2. Create a new empty repo in your github account with `your-project-name`
+
+3. In the new repo go to `Settings` and choose `Actions`, then `General`. In section `Workflow permissions` choose `Read and write permissions` and check the box `Allow GitHub Actions to approve pull requests`
+
+4. Open cloned repo in `VSCode` on your computer and link it to the new repo
+
+```bash
+git remote -v
+```
+The meassage below means the local repo is linked to the `Boilerplate`
+```bash
+origin  https://github.com/Vitalii-Prokopenko/webpack-js (fetch)
+origin  https://github.com/Vitalii-Prokopenko/webpack-js (push) 
+```
+
+```bash
+git remote set-url origin https://github.com/Vitalii-Prokopenko/test-webpack.git
+```
+
+Check again:
+
+```bash
+git remote -v
+```
+
+If you get the message below, your local repo is now linked to the new empty repo on `GitHub`:
+
+```bash
+origin  https://github.com/Vitalii-Prokopenko/your-project-name (fetch)
+origin  https://github.com/Vitalii-Prokopenko/your-project-name (push) 
+```
+Next you push local repo to `GitHub`:
+
+```bash
+git branch -M main
+git push -u origin main
+```
+
+5. Install webpack dependencies on your computer
+
+```bash
+npm i
+```
+
+6. In `package.json` edit `homepage` by changing `Vitalii-Prokopenko` on `Your-user-name` and `webpack-js` on `your-project-name`.
+Then edit script `build` by changing `webpack-js` on `your-project-name`.
+Then push a commit to `GitHub` repo.
+
+8. In `GitHub` repo go to `Settings`, choose `Pages`. Go to section `Build and Deployment`, choose branch `gh-pages` and `/(root)`, save.
+In few minutes update the page with your repo and get link to the deploy of your project.  
+
+### Development server
+
+```bash
+npm start
+```
+
+You can view the development server at `localhost:7070`.
+
+### Production build
+
+```bash
+npm run build
+```
 
 ## Author
 
