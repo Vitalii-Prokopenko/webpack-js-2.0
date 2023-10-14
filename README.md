@@ -2,7 +2,13 @@
 
 Webpack 5 boilerplate using Babel, Sass and Handlebars and processing xml, csv downloads.
 
-## Installation
+## Usage
+
+1. Clone this repo
+```bash
+git clone https://github.com/Vitalii-Prokopenko/webpack-js {your project name}
+```
+2. 
 
 Clone this repo and npm install.
 
