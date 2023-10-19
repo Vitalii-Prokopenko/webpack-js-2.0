@@ -1,27 +1,21 @@
-import logoImage from '@images/logo/logo.png';
-import webpackLogoImage from '@images/logo/webpack-logo.png';
 import '@scss/main.scss';
 
-// import dataXml from '@data/data.xml';
-// import dataCsv from '@data/data.csv';
+import heroImage from './assets/images/bay.jpg';
+import footerImage from './assets/images/city.png';
 
-console.log('Hello world!');
-console.log('Hello everybody!');
-// console.log(dataXml);
-// console.log(dataCsv);
+const heroText = document.createElement('p');
+heroText.textContent = 'This is a jpg image';
 
-// Create logo
-const logo = document.createElement('img');
-logo.src = logoImage;
+const hero = document.createElement('img');
+hero.src = heroImage;
+hero.width = 400;
 
-// Create heading node
-const heading = document.createElement('h1');
-heading.textContent = 'Webpack 5 Boilerplate';
+const footerText = document.createElement('p');
+footerText.textContent = 'This is a png image';
 
-// Create webpack logo
-const webpackLogo = document.createElement('img');
-webpackLogo.src = webpackLogoImage;
+const footer = document.createElement('img');
+footer.src = footerImage;
+footer.width = 400;
 
-// Append heading node to the DOM
 const app = document.querySelector('#root');
-app.append(logo, heading, webpackLogo);
+app.append(heroText, hero, footerText, footer);

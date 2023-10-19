@@ -1,7 +1,7 @@
 // Import plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // Import of paths to files
 const paths = require('./paths');
@@ -36,13 +36,13 @@ module.exports = {
     // Cleans the dist folder before new run
     new CleanWebpackPlugin(),
     // Copies static files to the dist folder
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: `${paths.public}/images`, to: `${paths.static}/images` },
-        { from: `${paths.public}/data`, to: `${paths.static}/data` },
-        { from: `${paths.public}/fonts`, to: `${paths.static}/fonts` },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     { from: `${paths.public}/images`, to: `${paths.static}/images` },
+    //     { from: `${paths.public}/data`, to: `${paths.static}/data` },
+    //     { from: `${paths.public}/fonts`, to: `${paths.static}/fonts` },
+    //   ],
+    // }),
   ],
 
   module: {
