@@ -63,18 +63,6 @@ module.exports = {
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
-      // XML data
-      { test: /\.xml$/, use: ['xml-loader'] },
-      // CSV data
-      {
-        test: /\.csv$/,
-        loader: 'csv-loader',
-        options: {
-          dynamicTyping: true,
-          header: true,
-          skipEmptyLines: true,
-        },
-      },
       // Handlebars templates
       { test: /\.handlebars$/, loader: 'handlebars-loader' },
     ],
