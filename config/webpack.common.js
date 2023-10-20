@@ -1,27 +1,29 @@
 // Import plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // Import of paths to files
 const paths = require('./paths');
 
 module.exports = {
+  // Entry point
   entry: {
-    app: `${paths.src}/index.js`, // Entry point of app
+    app: `${paths.src}/index.js`,
   },
 
+  // Module resolution
   resolve: {
-    extensions: ['.js', '.jsx', '.json'], // Default extensions: no need to mention them
+    // Default extensions: no need to mention them
+    extensions: ['.js', '.jsx', '.json'],
+
+    // Replace relative paths to files
     alias: {
-      // Replace relative paths to files
-      '@data': `${paths.public}/data`,
-      '@fonts': `${paths.public}/fonts`,
-      '@images': `${paths.public}/images`,
-      '@components': `${paths.src}/components`,
+      '@': paths.src,
       '@js': `${paths.src}/js`,
       '@scss': `${paths.src}/scss`,
-      '@': paths.src,
     },
   },
 
@@ -35,6 +37,7 @@ module.exports = {
     }),
     // Cleans the dist folder before new run
     new CleanWebpackPlugin(),
+
     // Copies static files to the dist folder
     // new CopyWebpackPlugin({
     //   patterns: [
@@ -46,7 +49,7 @@ module.exports = {
   ],
 
   module: {
-  // Rules
+    // Rules
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
       {
@@ -61,8 +64,10 @@ module.exports = {
       },
       // Images: Copy image files to build folder
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
+
       // Fonts and SVGs: Inline files
-      { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
+      { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/resource' },
+
       // Handlebars templates
       { test: /\.handlebars$/, loader: 'handlebars-loader' },
     ],
@@ -72,5 +77,46 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
     },
+    minimize: true,
+    minimizer: [
+      // Optimizes assets
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ['gifsicle', { interlaced: true }],
+              ['jpegtran', { progressive: true }],
+              ['optipng', { optimizationLevel: 5 }],
+              [
+                'svgo',
+                {
+                  plugins: [
+                    {
+                      name: 'preset-default',
+                      params: {
+                        overrides: {
+                          removeViewBox: false,
+                          addAttributesToSVGElement: {
+                            params: {
+                              attributes: [
+                                { xmlns: 'http://www.w3.org/2000/svg' },
+                              ],
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+      }),
+
+      // Transform jpg, png to webp and put 'em to dist
+      new ImageminWebpWebpackPlugin(),
+    ],
   },
 };

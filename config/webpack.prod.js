@@ -15,15 +15,20 @@ const common = require('./webpack.common');
 module.exports = merge(common, {
   // Set the mode to production
   mode: 'production',
+
   // Where webpack outputs the assets and bundles in production mode
   output: {
     filename: '[name].[contenthash].bundle.js',
     path: paths.build,
     clean: true,
+    publicPath: 'assets/',
     assetModuleFilename: 'assets/[name].[contenthash][ext][query]',
   },
+
   // Controls how source maps are generated
   devtool: false,
+
+  // Style rules
   module: {
     rules: [
       {
@@ -32,25 +37,29 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            // options: {
-            //   importLoaders: 2,
-            //   sourceMap: false,
-            //   modules: false,
-            // },
+            options: {
+              importLoaders: 2,
+              sourceMap: false,
+              modules: false,
+            },
           },
           'sass-loader',
         ],
       },
     ],
   },
+
+  // Plugins
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'styles/[name].[contenthash].css',
     }),
   ],
+
   // Minifies css in production mode
   optimization: {
-    minimize: true, // Tells webpack to minimize the bundle using the plugin specified in minimizer
+    // Tells webpack to minimize the bundle using the plugin specified in minimizer
+    minimize: true,
     minimizer: [
       // Minimizes css
       new CssMinimizerPlugin(),

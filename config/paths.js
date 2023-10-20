@@ -9,8 +9,8 @@ module.exports = {
   build: path.resolve(__dirname, '../dist'),
 
   // Where webpack should get static files copied to build folder
-  public: path.resolve(__dirname, '../assets'),
+  assets: path.resolve(__dirname, '../src/assets'),
 
   // Where webpack should put static files copied from public folder
-  static: path.resolve(__dirname, '../dist/static'),
+  buildAssets: path.resolve(__dirname, '../dist/assets'),
 };
