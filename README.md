@@ -1,6 +1,6 @@
 # Webpack 5 Boilerplate
 
-Webpack 5 boilerplate using Babel, Sass and Handlebars and processing xml, csv downloads.
+Webpack 5 boilerplate using Babel, Sass and Handlebars.
 
 ## Features
 
@@ -32,18 +32,17 @@ Webpack 5 boilerplate using Babel, Sass and Handlebars and processing xml, csv d
   - [`sass`](https://www.npmjs.com/package/sass) - Node Sass
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolve CSS imports
 - [`style-loader`](https://webpack.js.org/loaders/style-loader/) - Inject CSS into the DOM
-- [`csv-loader`](https://www.npmjs.com/package/csv-loader/) - Allow downloading csv-files
-- [`xml-loader`](https://www.npmjs.com/package/xml-loader/) - Allow downloading xml-files
 - [`handlebars-loader`](https://www.npmjs.com/package/handlebars-loader/) - Load Handlebars template
 
 ### Plugins
 
 - [`clean-webpack-plugin`](https://github.com/johnagan/clean-webpack-plugin) - Remove/clean build folders
-- [`copy-webpack-plugin`](https://github.com/webpack-contrib/copy-webpack-plugin) - Copy files to build directory
 - [`html-webpack-plugin`](https://github.com/jantimon/html-webpack-plugin) - Generate HTML files from template
 - [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) - Extract CSS into separate files
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - Minify JS code
+- [`image-minimizer-webpack-plugin`](https://webpack.js.org/plugins/image-minimizer-webpack-plugin/) - Minify jpg, png files
+- [`imagemin-webp-webpack-plugin`](https://www.npmjs.com/package/imagemin-webp-webpack-plugin) - Converts jpg and png files to webp files
 
 ### Linters
 

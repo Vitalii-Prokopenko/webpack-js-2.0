@@ -1,6 +1,6 @@
 # Шаблон Webpack 5
 
-Шаблон Webpack 5 з використанням `Babel`, `Sass`, `Handlebars` і можливостями обробки `xml` і `csv` файлів.
+Шаблон Webpack 5 з використанням `Babel`, `Sass`, `Handlebars`.
 
 ## Особливості
 
@@ -32,8 +32,6 @@
   - [`sass`](https://www.npmjs.com/package/sass) - Node Sass
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - реалізація імпортів `CSS`
 - [`style-loader`](https://webpack.js.org/loaders/style-loader/) - додавання `CSS` в `DOM`
-- [`csv-loader`](https://www.npmjs.com/package/csv-loader/) - завантаження `csv`-файлів
-- [`xml-loader`](https://www.npmjs.com/package/xml-loader/) - завантаження `xml`-файлів
 - [`handlebars-loader`](https://www.npmjs.com/package/handlebars-loader/) - завантаження шаблонів `Handlebars`
 
 ### Plugins (плагіни)
@@ -44,6 +42,8 @@
 - [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) - виділяє `CSS` в окремі файли
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - оптимізує і мінімізує `CSS` файли
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - мінімізує `JS` код
+- [`image-minimizer-webpack-plugin`](https://webpack.js.org/plugins/image-minimizer-webpack-plugin/) - мініфікує `jpg`, `png` файли
+- [`imagemin-webp-webpack-plugin`](https://www.npmjs.com/package/imagemin-webp-webpack-plugin) - конвертує `jpg` та `png` файли у `webp` файли та переносить їх в `dist`
 
 ### Linters (лінтери)
 

@@ -116,7 +116,7 @@ module.exports = {
         },
       }),
 
-      // Transform jpg, png to webp and put 'em to dist
+      // Converts jpg, png to webp and put 'em to dist
       new ImageminWebpWebpackPlugin(),
     ],
   },
