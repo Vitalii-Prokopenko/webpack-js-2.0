@@ -1,31 +1,24 @@
 @import '~normalize.css';
 
-// @font-face {
-//   font-family: 'Roboto-Regular';
-//   src: url('@fonts/roboto-regular.ttf');
-// }
+// Fonts
 
-// $font-family-js: 'Roboto-Regular', sans-serif;
+@import './fonts/fonts';
 
-body {
-  padding-top: 20px;
-  // font-family: $font-family-js;
-  background-color: #fff;
-}
+// Utils
 
-#root {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+@import './utils/variables';
+@import './utils/visually-hidden';
+@import './utils/mixins';
+@import './utils/placeholders';
 
-img {
-  width: 300px;
-}
+// Base
 
-h1 {
-  text-align: center;
-  font-weight: 900;
-  font-size: 50px;
-}
+@import './base/base';
+@import './base/reset';
+
+// Common
+
+@import './common/container';
+
+// Layout
+

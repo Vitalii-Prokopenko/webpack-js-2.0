@@ -1,0 +1,24 @@
+// === Variables ===
+
+// Fonts
+$mainFont: 'Roboto', sans-serif;
+$secondaryFont: 'Ubuntu', sans-serif;
+
+// Text colors
+$mainTextColor: #3E3E3E;
+$lightColor: #fff;
+$darkColor: #000;
+$accentColor: #0075FF;
+$subtitleColor: #9FADC2;
+$formLabelColor: #8F99A8;
+$formFieldColor: #F6F8FF;
+$hoverColor: #005ECC;
+
+// Breakpoints
+$mobile: 320px;
+$maxMobile: 1259px;
+$desktop: 1260px;
+
+// Transitions
+$transitionFunction: cubic-bezier(0.4, 0, 0.2, 1);
+$transitionTime: 500ms;

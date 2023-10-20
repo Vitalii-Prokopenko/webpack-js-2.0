@@ -1,0 +1,52 @@
+/* == BASIC PAGE STYLES == */
+
+body {
+  font-family: $mainFont;
+  color: $mainTextColor;
+  background-color: $lightColor;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  margin-bottom: 30px;
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.title {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+  font-family: $secondaryFont;
+  font-weight: 700;
+  font-size: 40px;
+
+  background-image: url('../assets/images/wallpaper.jpg');
+  background-size: cover;
+  color: crimson;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-icon {
+  fill: crimson;
+}
