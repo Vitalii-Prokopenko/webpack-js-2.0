@@ -72,6 +72,7 @@ module.exports = {
       { test: /\.handlebars$/, loader: 'handlebars-loader' },
     ],
   },
+
   // Optimizes js code of installed libraries
   optimization: {
     splitChunks: {
@@ -118,5 +119,15 @@ module.exports = {
       // Transform jpg, png to webp and put 'em to dist
       new ImageminWebpWebpackPlugin(),
     ],
+  },
+
+  // Performance
+  performance: {
+    assetFilter(assetFilename) {
+      return assetFilename.endsWith('.ttf');
+    },
+    hints: 'warning',
+    maxAssetSize: 300000,
+    maxEntrypointSize: 250000,
   },
 };
