@@ -19,7 +19,6 @@ module.exports = merge(common, {
     filename: '[name].bundle.js',
     path: paths.build,
     clean: true,
-    publicPath: '/assets/',
     assetModuleFilename: 'assets/[name][ext][query]',
   },
 
