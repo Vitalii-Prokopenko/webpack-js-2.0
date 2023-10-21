@@ -18,11 +18,10 @@ module.exports = merge(common, {
 
   // Where webpack outputs the assets and bundles in production mode
   output: {
-    filename: '[name].[contenthash].bundle.js',
     path: paths.build,
-    clean: true,
-    publicPath: 'assets/',
+    filename: '[name].[contenthash].bundle.js',
     assetModuleFilename: 'assets/[name].[contenthash][ext][query]',
+    clean: true,
   },
 
   // Controls how source maps are generated
@@ -37,11 +36,7 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: false,
-              modules: false,
-            },
+            options: { importLoaders: 2, sourceMap: false, modules: false },
           },
           'sass-loader',
         ],
@@ -68,5 +63,12 @@ module.exports = merge(common, {
         test: /\.js(\?.*)?$/i,
       }),
     ],
+  },
+
+  // Performance
+  performance: {
+    hints: false,
+    maxAssetSize: 900000,
+    maxEntrypointSize: 900000,
   },
 });

@@ -110,14 +110,4 @@ module.exports = {
       new ImageminWebpWebpackPlugin(),
     ],
   },
-
-  // Performance
-  performance: {
-    assetFilter(assetFilename) {
-      return assetFilename.endsWith('.ttf');
-    },
-    hints: 'warning',
-    maxAssetSize: 300000,
-    maxEntrypointSize: 250000,
-  },
 };

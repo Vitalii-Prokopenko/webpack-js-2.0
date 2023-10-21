@@ -16,10 +16,10 @@ module.exports = merge(common, {
 
   // Where webpack outputs the assets and bundles in development mode
   output: {
-    filename: '[name].bundle.js',
     path: paths.build,
-    clean: true,
+    filename: '[name].bundle.js',
     assetModuleFilename: 'assets/[name][ext][query]',
+    clean: true,
   },
 
   // Controls how source maps are generated
@@ -59,5 +59,12 @@ module.exports = merge(common, {
         ],
       },
     ],
+  },
+
+  // Performance
+  performance: {
+    hints: 'warning',
+    maxAssetSize: 900000,
+    maxEntrypointSize: 900000,
   },
 });
