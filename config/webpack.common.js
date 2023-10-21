@@ -33,6 +33,7 @@ module.exports = {
       title: 'Webpack-js', // The title to use for the generated HTML document
       template: `${paths.src}/template.html`, // Webpack relative or absolute path to the template
       filename: 'index.html', // The file to write the HTML to
+      favicon: `${paths.src}/assets/favicon/icon-corona-virus-24-24.png`, // Adds favicon
     }),
     // Cleans the dist folder before new run
     new CleanWebpackPlugin(),
