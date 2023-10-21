@@ -107,7 +107,6 @@ npm i
 ```
 
 6. В `package.json` відредагуй `homepage`, замінивши `Vitalii-Prokopenko` на `Your-user-name` і `webpack-js` на `your-project-name`.
-Далі відредагуй скрипт `build`, замінивши `webpack-js` на `your-project-name`.
 Далі запуш комміт на `GitHub` репозиторій.
 
 8. В `GitHub` репозиторії перейди до налаштувань `Settings`, обери `Pages`. Перейди в секцію `Build and Deployment`, обери гілку `gh-pages` і `/(root)`, збережи налаштування.

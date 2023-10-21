@@ -105,7 +105,6 @@ npm i
 ```
 
 6. In `package.json` edit `homepage` by changing `Vitalii-Prokopenko` on `Your-user-name` and `webpack-js` on `your-project-name`.
-Then edit script `build` by changing `webpack-js` on `your-project-name`.
 Then push a commit to `GitHub` repo.
 
 8. In `GitHub` repo go to `Settings`, choose `Pages`. Go to section `Build and Deployment`, choose branch `gh-pages` and `/(root)`, save.
