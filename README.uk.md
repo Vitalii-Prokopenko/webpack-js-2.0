@@ -126,6 +126,10 @@ npm start
 npm run build
 ```
 
+## Як змінити назву сторінки 
+
+В `webpack.common.js` в `HtmlWebpackPlugin` зміни ключ `title`.
+
 ## Автор
 
 - [Vitalii Prokopenko](https://www.linkedin.com/in/vitalii-prokopenko-51b012108/)

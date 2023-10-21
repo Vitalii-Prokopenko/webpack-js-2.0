@@ -124,6 +124,10 @@ You can view the development server at `localhost:7070`.
 npm run build
 ```
 
+## How to change page title 
+
+In `webpack.common.js` in `HtmlWebpackPlugin` change `title` key.
+
 ## Author
 
 - [Vitalii Prokopenko](https://www.linkedin.com/in/vitalii-prokopenko-51b012108/)
